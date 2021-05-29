@@ -29,7 +29,7 @@ namespace Sharpmake.Generators.VisualStudio
 <Project ToolsVersion=""[toolsVersion]"" xmlns=""http://schemas.microsoft.com/developer/msbuild/2003"">
 ";
                 public static string ProjectBeginNetCore =
-@"<Project>
+@"<Project Sdk=""Microsoft.NET.Sdk"">
 ";
 
                 public static string ProjectEnd =
@@ -40,6 +40,7 @@ namespace Sharpmake.Generators.VisualStudio
     <Configuration Condition="" '$(Configuration)' == '' "">[options.DefaultConfiguration]</Configuration>
     <Platform Condition="" '$(Platform)' == '' "">[defaultPlatform]</Platform>
     <PlatformTarget Condition="" '$(Platform)' == '' "">[defaultPlatform]</PlatformTarget>
+    <Platforms>[defaultPlatform]</Platforms>
     <ProjectGuid>{[guid]}</ProjectGuid>
     <OutputType>[outputType]</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>

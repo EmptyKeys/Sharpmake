@@ -1412,6 +1412,7 @@ namespace Sharpmake.Generators.VisualStudio
                     Write(Template.Project.ProjectConfigurationsRunPostBuildEvent, writer, resolver);
             }
 
+            /*
             string netCoreSdk = null;
             if (isNetCoreProjectSchema)
             {
@@ -1423,6 +1424,7 @@ namespace Sharpmake.Generators.VisualStudio
                 using (resolver.NewScopedParameter("sdkVersion", netCoreSdk))
                     Write(Template.Project.ImportProjectSdkItem, writer, resolver);
             }
+            */
 
             GenerateFiles(project, configurations, itemGroups, generatedFiles, skipFiles);
 
@@ -1530,12 +1532,14 @@ namespace Sharpmake.Generators.VisualStudio
 
             WriteEvents(options, writer, resolver);
 
+            /*
             if (isNetCoreProjectSchema)
             {
                 using (resolver.NewScopedParameter("importProject", "Sdk.targets"))
                 using (resolver.NewScopedParameter("sdkVersion", netCoreSdk))
                     Write(Template.Project.ImportProjectSdkItem, writer, resolver);
             }
+            */
 
             Write(Template.Project.ProjectEnd, writer, resolver);
 
